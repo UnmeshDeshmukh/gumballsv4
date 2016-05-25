@@ -127,7 +127,7 @@ var page = function( req, res, state, ts ) {
                 console.log(data);
                 count = data.countGumballs
                 console.log( "count = " + count ) ;
-                var msg =   "\n\nMighty Gumball, Inc.\n\nNodeJS-Enabled Standing Gumball\nModel# " + 
+                var msg =   "\n\nHELLO WORLD #1\n\n# IP : 52.38.239.149\n\nHELLO WORLD #1\n\n IP : 52.37.105.177"  "\n\nHELLO WORLD #1\n\n# IP : 52.37.63.167\n\nHELLO WORLD #1\n\n# " + 
                             data.modelNumber + "\n" +
                             "Serial# " + data.serialNumber + "\n" +
                             "\n" + state +"\n\n" ;
