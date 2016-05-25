@@ -127,10 +127,10 @@ var page = function( req, res, state, ts ) {
                 console.log(data);
                 count = data.countGumballs
                 console.log( "count = " + count ) ;
-                var msg =   "\n\nHELLO WORLD #1\n\n# " + 
-                             + "IP : 52.38.239.149" +"\n\nHELLO WORLD #1\n\n# " + 
-                             + "IP : 52.37.105.177" + "\n\nHELLO WORLD #1\n\n# " + 
-                             + "IP : 52.37.63.167" + "\n\nHELLO WORLD #1\n\n# "";
+                var msg =   "\n\nHELLO WORLD #1\n\n# IP : 52.38.239.149 \n\nHELLO WORLD #1\n\n# IP : 52.37.105.177  \n\nHELLO WORLD #1\n\n#IP : 52.37.63.167  "\n\nHELLO WORLD #1\n\n# " 
+                            data.modelNumber + "\n" +
+                            "Serial# " + data.serialNumber + "\n" +
+                            "\n" + state +"\n\n" ;
                 result.msg = msg ;
                 result.ts = ts ;
                 result.hash = hash ;
@@ -138,8 +138,8 @@ var page = function( req, res, state, ts ) {
 
                 res.render('gumball', {
                     state: result.state,
-                    //ts: result.ts,
-                    //hash: result.hash,
+                    ts: result.ts,
+                    hash: result.hash,
                     message: result.msg
                 });
 
@@ -282,10 +282,12 @@ db.addUser('cmpe281', 'cmpe281');
 
 -- Gumball MongoDB Collection (Create Document)
 
-db.helloworld.insert(
+db.gumball.insert(
 { 
   id: 1,
-  name: 'Hello World #1'
+  countGumballs: 8,
+  modelNumber: 'M102988',
+  serialNumber: '1234998871109' 
 }
 ) ;
 
